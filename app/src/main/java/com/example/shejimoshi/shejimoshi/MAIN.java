@@ -1,5 +1,6 @@
 package com.example.shejimoshi.shejimoshi;
 
+import com.example.shejimoshi.shejimoshi.builder.BuilderA;
 import com.example.shejimoshi.shejimoshi.clone.PersonA;
 import com.example.shejimoshi.shejimoshi.clone.PersonB;
 import com.example.shejimoshi.shejimoshi.dali.SingletonDemo1;
@@ -100,6 +101,9 @@ public class MAIN {
         PersonB p2 = (PersonB) personB.clone();
         hobbiesB.add("D");
         System.out.println(p2);
+
+        //建造者模式(写的比较简单，重点是容易理解)
+        new BuilderA().setName("张三").setAge(14);
 
 
     }
