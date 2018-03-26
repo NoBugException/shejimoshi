@@ -1,5 +1,7 @@
 package com.example.shejimoshi.shejimoshi;
 
+import com.example.shejimoshi.shejimoshi.clone.PersonA;
+import com.example.shejimoshi.shejimoshi.clone.PersonB;
 import com.example.shejimoshi.shejimoshi.dali.SingletonDemo1;
 import com.example.shejimoshi.shejimoshi.dali.SingletonDemo2;
 import com.example.shejimoshi.shejimoshi.dali.SingletonDemo3;
@@ -11,6 +13,9 @@ import com.example.shejimoshi.shejimoshi.fatory.HpMouseFactroyB;
 import com.example.shejimoshi.shejimoshi.fatory.KeyBoard;
 import com.example.shejimoshi.shejimoshi.fatory.Mouse;
 import com.example.shejimoshi.shejimoshi.fatory.MouseFactoryA;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by beixinyuan_android on 2018/3/26.
@@ -67,6 +72,35 @@ public class MAIN {
         mouse6.sayHi();
         KeyBoard keyBoard2 = new HpFactory().createKeyBoard();
         keyBoard2.sayHi();
-    }
 
+        //浅拷贝
+        PersonA personA = new PersonA();
+        personA.setName("张三");
+        personA.setAge(14);
+        ArrayList<String> hobbies = new ArrayList<>();
+        hobbies.add("A");
+        hobbies.add("B");
+        hobbies.add("C");
+        personA.setHobbies(hobbies);
+        System.out.println(personA);
+        PersonA p1 = (PersonA) personA.clone();
+        hobbies.add("D");
+        System.out.println(p1);
+
+        //深拷贝
+        PersonB personB = new PersonB();
+        personB.setName("张三");
+        personB.setAge(14);
+        ArrayList<String> hobbiesB = new ArrayList<>();
+        hobbiesB.add("A");
+        hobbiesB.add("B");
+        hobbiesB.add("C");
+        personB.setHobbies(hobbiesB);
+        System.out.println(personB);
+        PersonB p2 = (PersonB) personB.clone();
+        hobbiesB.add("D");
+        System.out.println(p2);
+
+
+    }
 }
