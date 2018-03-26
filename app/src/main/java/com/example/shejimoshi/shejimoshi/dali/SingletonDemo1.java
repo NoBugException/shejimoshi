@@ -12,7 +12,7 @@ public class SingletonDemo1 {
     private SingletonDemo1(){}
 
     public static synchronized SingletonDemo1 getInstance(){
-        if(instance != null){
+        if(instance == null){
             instance = new SingletonDemo1();
         }
         return instance;
