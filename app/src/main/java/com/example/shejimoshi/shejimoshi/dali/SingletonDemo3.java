@@ -12,9 +12,9 @@ public class SingletonDemo3 {
     private SingletonDemo3(){}
 
     public static SingletonDemo3 getInstance(){
-        if(instance != null){
+        if(instance == null){
             synchronized (SingletonDemo3.class){
-                if(instance != null){
+                if(instance == null){
                     instance = new SingletonDemo3();
                 }
             }
